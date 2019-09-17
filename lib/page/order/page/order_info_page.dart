@@ -9,7 +9,7 @@ class OrderInfoPage extends StatefulWidget {
 
 class _OrderInfoPageState extends State<OrderInfoPage> {
 
-  OrderPageProvider provider = OrderPageProvider()  
+  //OrderPageProvider provider = OrderPageProvider()  
 
   @override
   void initState() { 
