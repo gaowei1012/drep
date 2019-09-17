@@ -31,8 +31,25 @@ class _OrderPageState extends State<OrderPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text('order'),),
+    return ChangeNotifierProvider<OrderPageProvider>(
+      builder: (_) => provider,
+      child: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            const SafeArea(
+              child: const SizedBox(
+                height: 105,
+                width: double.infinity,
+                child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: const [Color(0xFF5793FA), Color(0xFF4647FA)])
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

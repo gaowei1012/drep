@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_derp/util/image_util.dart';
-import 'package:provider/provider.dart';
 
 class OrderInfoPage extends StatefulWidget {
   @override
