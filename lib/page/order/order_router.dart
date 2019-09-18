@@ -1,17 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:fluro/fluro.dart';
+import 'package:flutter_derp/routers/router_init.dart';
+import 'package:flutter_derp/page/order/page/order_page.dart';
 
-class OrderPage extends StatefulWidget {
+class OrderRouter implements IRouterProvider {
+  
+  // path
+  static String orderPage = "/order";
+  
   @override
-  _OrderPageState createState() => _OrderPageState();
-}
-
-class _OrderPageState extends State<OrderPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      child: Center(
-        child: Text('order'),
-      ),
-    );
+  void initRouter(Router router) {
+    router.define(orderPage, handler: Handler(handlerFunc: (_, parmas) => OrderPage()));
   }
 }

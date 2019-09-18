@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
 
   void initData() {
     // 页面
-    _pageList = [SettingPage(), OrderPage(), GoodsPage(), ShopPage()];
+    _pageList = [SettingPage(), OrderRouter(), GoodsPage(), ShopPage()];
 
     _tabImages = [
       // action icon
