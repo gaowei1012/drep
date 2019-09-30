@@ -60,7 +60,7 @@ class DioUtils {
     try {
       Map<String, dynamic> _map = Contant.isTest ? parseData(response.data.toString()) : await compute(parseData, response.data.toString());
 
-      return BaseEntity.formJson(_map);
+      return BaseEntity.fromJSON(_map);
     } catch(e) {
       return e;
     }
