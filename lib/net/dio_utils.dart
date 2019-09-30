@@ -127,10 +127,9 @@ class DioUtils {
           _onError(result.code, result.message, onError);
         }
       }, onError: (e) {
-        _cancelLogPrint(e, url) {
-          NetError error = ExceptionHandle.handleException(e);
-          _onError(error.code, error.msg, onError);
-        }
+        _cancelLogPrint(e, url);
+        NetError error = ExceptionHandle.handleException(e);
+        _onError(error.code, error.msg, onError);
       });
   }
 
