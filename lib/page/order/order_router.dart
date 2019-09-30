@@ -1,10 +1,14 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter_derp/routers/router_init.dart';
-import 'package:flutter_derp/page/order/page/order_page.dart';
+
+import 'page/order_info_page.dart';
+import 'page/order_page.dart';
+import 'page/order_search.dart';
+import 'page/order_track_page.dart';
 
 class OrderRouter implements IRouterProvider {
   
-  // path
+  // order path
   static String orderPage = "/order";
   
   @override

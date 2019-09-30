@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_derp/util/toast.dart';
 import 'package:flutter_derp/page/goods/goods_page.dart';
-import 'package:flutter_derp/page/order/order_router.dart';
+// import 'package:flutter_derp/page/order/order_router.dart';
+import 'package:flutter_derp/page/order/page/order_page.dart';
 import 'package:flutter_derp/page/setting/setting_page.dart';
 import 'package:flutter_derp/page/shop/shop_page.dart';
 import 'package:flutter_derp/util/image_util.dart';
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
 
   void initData() {
     // 页面
-    _pageList = [SettingPage(), OrderRouter(), GoodsPage(), ShopPage()];
+    _pageList = [SettingPage(), OrderPage(), GoodsPage(), ShopPage()];
 
     _tabImages = [
       // action icon
