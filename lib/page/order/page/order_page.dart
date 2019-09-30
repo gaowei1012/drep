@@ -23,7 +23,9 @@ class _OrderPageState extends State<OrderPage> with AutomaticKeepAliveClientMixi
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('this is order page'),
+      child: Center(
+        child: Text('this is order page'),
+      ),
     );
   }
 }
