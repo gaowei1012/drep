@@ -46,9 +46,9 @@ class _HomePageState extends State<HomePage> {
     // 页面
     _pageList = [
       OrderPage(),
-      SettingPage(),
+      ShopPage(),
       GoodsPage(),
-      ShopPage()
+      SettingPage(),
     ];
 
     _tabImages = [
