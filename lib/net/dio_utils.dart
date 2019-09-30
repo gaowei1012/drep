@@ -85,7 +85,7 @@ class DioUtils {
     return await _request<T>(m, url, data: params, queryParameters: queryParameters, options: options, cancelToken: cancelToken).then((BaseEntity<T> result) {
       if (result.code == 0) {
         if (isList) {
-          onSuccessList(result.data);
+          onSuccessList(result.listData);
         } else {
           if (onSuccess != null) {
             onSuccess(result.data);
