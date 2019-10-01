@@ -21,10 +21,39 @@ class _OrderPageState extends State<OrderPage> with AutomaticKeepAliveClientMixi
   OrderPageProvider provider = OrderPageProvider();
 
   @override
+  void initState() { 
+    super.initState();
+    // tab viwe 
+    _tabController = TabController(vsync: this, length: 5);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _preCacheImage();
+    });
+  }
+
+  // 图片缓存
+  _preCacheImage() {
+    precacheImage(ImageUtils.getAssetImage("order/xdd_n"), context);
+    precacheImage(ImageUtils.getAssetImage("order/dps_s"), context);
+    precacheImage(ImageUtils.getAssetImage("order/dwc_s"), context);
+    precacheImage(ImageUtils.getAssetImage("order/ywc_s"), context);
+    precacheImage(ImageUtils.getAssetImage("order/yqx_s"), context);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('this is order page'),
+    super.build(context);
+    return ChangeNotifierProvider<OrderPageProvider>(
+      builder: (_) => provider,
+      child: Scaffold(
+        body: Center(
+          child: Text("this is order"),
+        ),
       ),
     );
   }
