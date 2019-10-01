@@ -51,10 +51,65 @@ class _OrderPageState extends State<OrderPage> with AutomaticKeepAliveClientMixi
     return ChangeNotifierProvider<OrderPageProvider>(
       builder: (_) => provider,
       child: Scaffold(
-        body: Center(
-          child: Text("this is order"),
-        ),
+        body: Stack(
+          children: <Widget>[
+            const SafeArea(
+              child: const SizedBox(
+                height: 105,
+                width: double.infinity,
+                child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: const [Color(0xFF5793FA), Color(0xFF4647FA)])
+                  ),
+                ),
+              ),
+            ),
+            NestedScrollView(
+              key: const Key('order_list'),
+              physics: ClampingScrollPhysics(),
+              headerSliverBuilder: (context, innerBosScrolled) {
+                return _sliverBuilder(context);
+              },
+              body: PageView.builder(
+                key: const Key('page_view'),
+                itemCount: 5,
+                onPageChanged: null,
+                controller: null,
+                itemBuilder: (_, index) {
+                  return null;
+                },
+              ),
+            )
+          ],
+        )
       ),
     );
   }
+}
+
+List<Widget> _sliverBuilder(BuildContext context) {
+  return <Widget>[
+    SliverOverlapAbsorber(
+      handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+      child: SliverAppBar(
+        leading: null,
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              NavigatorUtils.push(context, null);
+            },
+            tooltip: '搜索',
+            icon: const LoadAssetImage('order/icon_search', width: 22.0, height: 22.0),
+          )
+        ],
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        centerTitle: true,
+        expandedHeight: 100.0,
+        floating: false, // 不随着标题滚动而滚动
+        pinned: true, // 固定在顶部
+        flexibleSpace: null,
+      ),
+    )
+  ];
 }
