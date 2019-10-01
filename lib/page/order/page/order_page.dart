@@ -4,6 +4,7 @@ import 'package:flutter_derp/util/image_util.dart';
 import 'package:flutter_derp/widgets/load_inage.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_derp/page/order/provider/order_page_provider.dart';
+import 'package:flutter_derp/widgets/my_flexible_space.dart';
 import 'package:flutter_derp/routers/fluro_navigator.dart';
 
 class OrderPage extends StatefulWidget {
@@ -108,7 +109,13 @@ List<Widget> _sliverBuilder(BuildContext context) {
         expandedHeight: 100.0,
         floating: false, // 不随着标题滚动而滚动
         pinned: true, // 固定在顶部
-        flexibleSpace: null,
+        flexibleSpace: const MyFlexibleSpaceBar(
+          background: const LoadAssetImage("order/order_bg", width: double.infinity, height: 11.3, fit: BoxFit.fill),
+          centerTitle: true,
+          titlePadding: const EdgeInsetsDirectional.only(start: 16.0, bottom: 14.0),
+          collapseMode: CollapseMode.pin,
+          title: const Text("订单"),
+        )
       ),
     )
   ];
